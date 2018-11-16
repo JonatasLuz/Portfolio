@@ -1,11 +1,12 @@
 <H1>Index da pagina de Portfolio</H1>
 
-
+<%= link_to "Criar novo item Portfolio", new_portfolio_path =%>
 
 <% @portfolios_items.each do |portfolio_item| %>
 <h3> <%= portfolio_item.title =%> </h3>
 <h4> <%= portfolio_item.subtitle =%> <h4>
 <p> <%= portfolio_item.body =%> </p>
- <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? =%>
+<%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? =%>
+<%= link_to "Editar", edit_portfolio_path(portfolio_item.id) =%>
 
 <% end %>
