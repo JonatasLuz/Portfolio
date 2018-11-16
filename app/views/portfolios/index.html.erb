@@ -1,0 +1,11 @@
+<H1>Index da pagina de Portfolio</H1>
+
+
+
+<% @portfolios_items.each do |portfolio_item| %>
+<h3> <%= portfolio_item.title =%> </h3>
+<h4> <%= portfolio_item.subtitle =%> <h4>
+<p> <%= portfolio_item.body =%> </p>
+ <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? =%>
+
+<% end %>
