@@ -31,9 +31,16 @@ class PortfoliosController < ApplicationController
         	format.json { render json: @blog.errors, status: :unprocessable_entity }
       		end
     	end
-  	end
-    def show
-      @portfolio_item = Portfolio.find(params[:id])
-      
+  end
+  def show
+    @portfolio_item = Portfolio.find(params[:id])
+  end
+  def destroy
+    @portfolio_item = Portfolio.find(params[:id])
+    @portfolio_item.destroy
+    respond_to do |format|
+      format.html { redirect_to portfolios_url, notice: 'Portfolio foi apagado com sucesso.' }        
+      format.json { head :no_content }
     end
+  end
 end
