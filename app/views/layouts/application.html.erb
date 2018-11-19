@@ -20,5 +20,8 @@
     <%= link_to "Login", new_user_session_path %>
     <% end  %>
     <%= yield %>
+    <% if session[:source] %>
+    Obrigado por visitar meu Portfolio através do <%= session[:source] %>
+    <% end %>
   </body>
 </html>
