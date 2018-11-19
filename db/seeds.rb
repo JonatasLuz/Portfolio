@@ -4,28 +4,36 @@
 # Examples:
 #
 
+3.times do |topic|
+	Topic.create!(
+		title:"Topico #{topic}"
+	)
+end
+
 10.times do |blog|
-	Blog.create(
+	Blog.create!(
 		title:"My blog #{blog}",
 		body:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		Suspendisse vel leo mi. Integer eget ullamcorper nibh. Maecenas nec nibh condimentum, aliquet tellus vel, auctor leo. 
 		Curabitur libero metus, ornare ac urna et, fermentum fermentum mauris. 
 		Nunc commodo vulputate est, non luctus leo imperdiet condimentum. 
-		Pellentesque tincidunt nibh sit amet elit scelerisque ultricies. Pellentesque vitae vulputate arcu."
+		Pellentesque tincidunt nibh sit amet elit scelerisque ultricies. Pellentesque vitae vulputate arcu.",
+		topic_id: Topic.last.id
 	)
 end
 
+
 5.times do |skill|
-	Skill.create(
+	Skill.create!(
 		title:"Minha skill #{skill}",
 		percent_utilized:"5"
 	)
 end
 
 9.times do |portfolio|
-	Portfolio.create(
+	Portfolio.create!(
 		title:"Meu portfolio #{portfolio}",
-		subtitle:"#{portfolio} portfolio",
+		subtitle:"#{portfolio} Ruby on Rails",
 		body:"Nullam eu mattis nibh. Nulla lorem augue, venenatis sed lacus eget, pharetra tristique erat. 
 		Iteger sit amet lectus risus. Ut id neque a tellus pellentesque commodo. In et vehicula nisi. 
 		Praesent eget imperdiet ipsum, ac vulputate quam. Nulla consectetur, massa sed rutrum dapibus, 
@@ -33,4 +41,24 @@ end
 		main_image:"https://via.placeholder.com/600x400",
 		thumb_image:"https://via.placeholder.com/300x200"
 	)
+end
+
+2.times do |portfolio|
+	Portfolio.create!(
+		title:"Meu portfolio #{portfolio}",
+		subtitle:"#{portfolio} Angular",
+		body:"Nullam eu mattis nibh. Nulla lorem augue, venenatis sed lacus eget, pharetra tristique erat. 
+		Iteger sit amet lectus risus. Ut id neque a tellus pellentesque commodo. In et vehicula nisi. 
+		Praesent eget imperdiet ipsum, ac vulputate quam. Nulla consectetur, massa sed rutrum dapibus, 
+		risus diam porttitor ipsum, sed efficitur sapien magna vitae tellus.",
+		main_image:"https://via.placeholder.com/600x400",
+		thumb_image:"https://via.placeholder.com/300x200"
+	)
+end
+
+3.times do |technology|
+	Technology.create!(
+		name:"Tecnologia numero #{technology}",
+		portfolio_id:Portfolio.last.id
+		)
 end
