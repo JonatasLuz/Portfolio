@@ -12,11 +12,7 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div><%= link_to "Paginal inicial", root_path %></div>
-    <div><%= link_to "Sobre", about_path %></div>
-    <div><%= link_to "Contato", contact_path %></div>
-    <div><%= link_to "Blog", blogs_path %></div>
-    <div><%= link_to "Portfolio", portfolios_path %></div>
+    <%= render "shared/nav", location: 'top' ;%>
 
 
     <% if current_user.first_name!="Convidado" %>
