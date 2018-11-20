@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jonatas Portfolio</title>
+    <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,6 +12,12 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <div><%= link_to "Paginal inicial", root_path %></div>
+    <div><%= link_to "Sobre", about_path %></div>
+    <div><%= link_to "Contato", contact_path %></div>
+    <div><%= link_to "Blog", blogs_path %></div>
+    <div><%= link_to "Portfolio", portfolios_path %></div>
+
 
     <% if current_user.first_name!="Convidado" %>
     <%= link_to "Logout", destroy_user_session_path, method: :delete %>
