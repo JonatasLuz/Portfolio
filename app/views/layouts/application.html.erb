@@ -17,8 +17,6 @@
 
 
     <%= yield %>
-    <% if session[:source] %>
-    Obrigado por visitar meu Portfolio através do <%= session[:source] %>
-    <% end %>
+   <%= source_helper("application") %>
   </body>
 </html>
