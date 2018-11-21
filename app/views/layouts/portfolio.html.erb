@@ -13,17 +13,11 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= render "shared/nav", location: 'top' ;%>
+    <%= login_helper %>
 
 
-    <% if current_user.first_name!="Convidado" %>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% else  %>
-    <%= link_to "Registre-se", new_user_registration_path %>
-    <%= link_to "Login", new_user_session_path %>
-    <% end  %>
     <%= yield %>
-    <% if session[:source] %>
-    Obrigado por visitar meu Portfolio através do <%= session[:source] %>
-    <% end %>
+    <%= source_helper("portfolio") %>
+
   </body>
 </html>

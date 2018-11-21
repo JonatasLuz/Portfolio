@@ -1,0 +1,6 @@
+<h3> <%=  link_to portfolio_item.title, portfolio_path(portfolio_item.id) =%> </h3>
+<h4> <%= portfolio_item.subtitle =%> <h4>
+<p> <%= portfolio_item.body =%> </p>
+<%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? =%>
+<%= link_to "Editar", edit_portfolio_path(portfolio_item.id) =%>
+<%= link_to 'Deletar Item', portfolio_path(portfolio_item.id), method: :delete, data: { confirm: 'Tem certeza?' } %>
