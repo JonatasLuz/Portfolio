@@ -1,7 +1,7 @@
 
 <H1>Index da pagina de Portfolio</H1>
 
-<%= link_to "Criar novo item Portfolio", new_portfolio_path =%>
+<%= link_to "Criar novo item Portfolio", new_portfolio_path if logged_in?(:site_admin) %>
 
 
 
