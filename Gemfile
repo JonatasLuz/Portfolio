@@ -63,3 +63,5 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 
 gem 'petergate', '~> 2.0', '>= 2.0.1'
+
+gem "aws-sdk-s3", require: false
