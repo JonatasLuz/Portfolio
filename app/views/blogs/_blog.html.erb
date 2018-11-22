@@ -1,9 +1,13 @@
-   <tr>
-        <td><%= blog.title %></td>
-        <td><%= distance_of_time_in_words(blog.created_at, Time.now) %></td>
-        <td><%= blog.body %></td>
-        <td><%= link_to  blog.status, toggle_status_blog_path(blog) if logged_in?(:site_admin) %></td>
-        <td><%= link_to 'Mostrar', blog %></td>
-        <td><%= link_to 'Editar', edit_blog_path(blog) if logged_in?(:site_admin) %></td>
-        <td><%= link_to 'Deletar Post', blog, method: :delete,  data: { confirm: 'Tem certeza?' } if logged_in?(:super_site_adminadmin) %></td>
-     </tr>
+<div class="blog-post">
+    <h2 class="blog-post-title"><%= link_to blog.title, blog %></h2>
+    <p class="blog-post-meta"><%= distance_of_time_in_words(blog.created_at, Time.now) %></p>
+    <p class="blog-post-meta"><%= blog.body %></p>
+    <% if logged_in?(:site_admin) %>
+   		<p class="blog-post-meta">
+    		<%= link_to  blog.status, toggle_status_blog_path(blog)%> /
+    		<%= link_to  'Editar' , edit_blog_path(blog) %> /
+    		<%= link_to 'Deletar Post', blog, method: :delete,  data: { confirm: 'Tem certeza?' } %>
+    		</p>
+    <% end %>    
+    <hr>        
+</div>
