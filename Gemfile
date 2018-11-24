@@ -74,6 +74,8 @@ gem 'dotenv-rails', '~> 2.5'
 
 gem "aws-sdk-s3", require: false
 
+gem 'fog-aws'
+
 ruby "2.5.1"
 
 
